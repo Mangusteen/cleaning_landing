@@ -13,7 +13,6 @@
     position: absolute;
     background: #DCDDEB;
     @include width-height(100%, 1px);
-
   }
   // .footer__content
 
@@ -113,9 +112,6 @@
   // .footer__open-hours
 
   &__week-hours {
-    // @media(max-width: 992px) {
-    //   display: flex;
-    // }
   }
   &__open-hours {
     &:not(:last-child) {
