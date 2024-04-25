@@ -1,0 +1,77 @@
+@import './row_item';
+.articles-resources {
+  height: 800px;
+  margin: 0px 0px 120px 0px;
+  @media(max-width: 992px) {
+    height: 900px;
+  }
+  @media(max-width: 768px) {
+    margin: 0px 0px 100px 0px;
+    height: 650px;
+  }
+  @media(max-width: 499px) {
+    margin: 0px 0px 60px 0px;
+    height: 700px;
+  }
+  // .articles-resources__header
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    @media(max-width: 1087px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  // .articles-resources__text
+
+  &__text {
+    max-width: 474px;
+    margin: 0px 0px 15px 0px;
+    @media(max-width: 1087px) {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  // .articles-resources__buttons
+
+  &__buttons {
+    display: flex;
+    @media(max-width: 1087px) {
+      margin: 0px 0px 15px 0px;
+    }
+    @media(max-width: 992px) {
+      margin: 0px 0px 30px 0px;
+    }
+  }
+
+  // .articles-resources__button
+
+  &__button {
+    margin: 0px 28px 0px 0px;
+    @media(max-width: 499px) {
+      margin: 0px 0px 0px 0px;
+    }
+    // .articles-resources__button_2
+
+    &_2 {
+      @media(max-width: 499px) {
+        display: none;
+      }
+    }
+  }
+
+  // .articles-resources__body
+
+  &__body {
+    display: flex;
+  }
+
+  // .articles-resources__row
+
+  &__row {
+    
+  }
+}

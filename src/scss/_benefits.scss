@@ -1,0 +1,128 @@
+.benefits {
+  margin: 0px 0px 120px 0px;
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+  // .benefits__header
+
+  &__header {
+    @extend .how-works__header;
+    @extend .how-works__text;
+    @media(max-width: 768px) {
+      margin: 0px 0px 25px 0px;
+    }
+  }
+
+  // .benefits__text
+
+  &__text {
+  }
+
+  // .benefits__statistics
+
+  &__statistics {
+    max-width: 750px;
+    display: flex;
+    margin: 0px 0px 40px 0px;
+    @media(max-width: 768px) {
+      flex-wrap: wrap;
+      margin: 0px 0px 25px 0px;
+      justify-content: center;
+    }
+    @media(max-width: 449px) {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // .benefits__item
+
+  &__item {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      margin: 0px 85px 0px 0px;
+      @media(max-width: 768px) {
+        margin: 0px 45px 0px 0px;
+      }
+    }
+  }
+
+  // .benefits__icon
+
+  &__icon {
+    @media(max-width: 768px) {
+      img{
+        @include width-height(80px, 80px);
+      }
+
+    }
+  }
+
+  // .benefits__title
+
+  &__title {
+    @include fz-lh(16px, 18px);
+    color: var(--gray);
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+  }
+
+  // .benefits__value
+
+  &__value {
+    @include fz-lh(28px, 36px);
+    color: var(--dark-blue);
+    font-weight: 700;
+    @media(max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  // .benefits__video-block
+
+  &__video-block {
+    margin: 0 auto;
+    border-radius: 53px;
+    background: rgba(255, 255, 255, 0.50);
+    max-width: 1012px;
+    max-height: 570px;
+  }
+  // .benefits__video-image
+
+  &__video-image {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color:var(--white);
+      opacity: 0.5;
+      @include width-height(100%, 100%);
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+
+  // .benefits__play-icon
+
+  &__play-icon {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    cursor: pointer;
+    &:hover {
+      @include transition(transform, 0.15s, ease-in-out, 0s);
+      transform: scale(1.1);
+    }
+    @media(max-width: 992px) {
+      @include width-height(150px, 150px);
+    }
+    @media(max-width: 768px) {
+      @include width-height(100px, 100px);
+    }
+  }
+
+}

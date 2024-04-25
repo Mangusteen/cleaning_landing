@@ -1,0 +1,28 @@
+
+@mixin transition($property, $duration, $style, $delay) {
+  transition: $property $duration $style $delay;
+}
+@mixin text-transform {
+  transform: translate(0px, 120%); 
+  opacity: 0;
+  @include transition(all, 0.8s, ease, 0s);
+}
+
+@mixin fz-lh($fz,$lh) {
+  font-size: $fz;
+  line-height: $lh;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+
+
+

@@ -1,0 +1,23 @@
+.open-hours {
+
+  // .open-hours__title
+
+  &__title {
+    @include fz-lh(18px, 20px);
+    color: var(--dark-blue);
+    font-weight: 700;
+    @media(max-width: 768px) {
+      @include fz-lh(16px, 16px);
+    }
+  }
+
+  // .open-hours__time
+
+  &__time {
+    @include fz-lh(18px, 30px);
+    color: var(--gray);
+    @media(max-width: 768px) {
+      @include fz-lh(16px, 24px);
+    }
+  }
+}

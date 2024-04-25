@@ -1,0 +1,58 @@
+.call-us {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  @include transition(transform, 0.8s, ease, 0.15s);
+  position: relative;
+  // .call-us__icon
+
+  &__icon {
+    margin: 0px 8px 0px 0px;
+    img {
+      @include width-height(72px, 72px);
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  // .call-us__info
+
+  &__info {
+    cursor: pointer;
+  }
+
+  // .call-us__title
+
+  &__title {
+    @include fz-lh(16px, 18px);
+    color: var(--gray);
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    &_white {
+    color: var(--white);
+    }
+  }
+
+  // .call-us__phone
+
+  &__phone {
+    @include fz-lh(24px, 36px);
+    color: var(--dark-blue);
+    font-weight: 700;
+    &:hover {
+      @include transition(color, 0.15s, ease, 0s);
+      color: var(--accent-color);
+    }
+    @media(max-width: 768px) {
+      font-size: 22px;
+    }
+    @media(max-width: 499px) {
+      align-self: end;
+    }
+  &_white {
+    color: var(--white);
+  }
+  }
+}

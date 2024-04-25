@@ -1,0 +1,209 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-template-rows: 1fr;
+  column-gap: 15px;
+  @media(max-width: 839px) {
+    grid-template-columns: minmax(250px, 500px);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 0px;
+    row-gap: 20px;
+  }
+  @media(max-width: 499px) {
+    align-items: center;
+  }
+
+		// .cards__card
+
+		&__card {
+
+		}
+
+		// .cards__item
+
+		&__item {
+      padding: 25px 0px 0px 0px;
+      display: grid;
+      grid-auto-flow: row;
+      grid-template: 1fr 1fr auto;
+      padding: 10px;
+      @media(max-width: 839px) {
+        grid-auto-flow: column;
+      }
+      @media(max-width: 499px) {
+        grid-template: auto 1fr 1fr;
+        grid-auto-flow: row;
+        align-items: center;
+      }
+		}
+
+		// .cards__image
+
+		&__image {
+      margin: 0px 0px 16px 0px;
+      width: 100%;
+      text-align: center;
+      transform: scale(0);
+      @include transition(transform, 0.8s, ease, 0s);
+      &.active {
+        transform: scale(1);
+      }
+      img {
+        max-width: 100%;
+      }
+      &:hover {
+        transform: scale(1.1);
+        @include transition(transform, 0.3s, ease-in-out, 0s);
+      }
+
+      @media(max-width: 839px) {
+        max-width: 200px;
+      }
+      @media(max-width: 499px) {
+        max-width: 100%;
+        img {
+          max-width: 200px;
+        }
+      }
+		}
+
+		// .cards__info
+
+		&__info {
+      position: relative;
+      padding: 0px 0px 0px 20px;
+      transform: translate(0px, 30%);
+      opacity: 0;
+      @include transition(transform, 0.3s, ease, 0s);
+      &.active {
+        transform: translate(0px, 0px);
+        opacity: 1;
+        @include transition(transform, 0.8s, ease, 0.6s);
+      }
+		}
+
+		// .cards__title
+
+		&__title {
+      @include fz-lh(28px, 36px);
+      color: var(--dark-blue);
+      font-weight: 700;
+      margin: 0px 0px 16px 0px;
+      a {
+        color: var(--dark-blue);
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include width-height(100%, 100%);
+        }
+      }
+      @media(max-width: 839px) {
+        @include fz-lh(24px, 30px); 
+      }
+		}
+
+		// .cards__text
+
+		&__text {
+      @include fz-lh(21px, 30px);
+      color: var(--gray);
+      @media(max-width: 839px) {
+        font-size: 18px;
+      }
+		}
+}
+
+.cards-row {
+  display: flex;
+  @media(max-width: 1087px) {
+    flex-direction: column;
+  }
+  
+  // .cards-row__card
+
+  &__card {
+    @include flex-column;
+    flex: 0 0 33.33%;
+    max-width: 388px;
+    max-height: 100%;
+    border-radius: 16px;
+    border: 1px solid #EFF0F6;
+    box-shadow: 0px 2px 6px 0px rgba(20, 20, 43, 0.04);
+    position: relative;
+    &:not(:last-child) {
+      margin: 0px 28px 0px 0px;
+      @media(max-width: 1087px) {
+        margin: 0px 0px 20px 0px;
+      }
+    }
+    &:hover {
+      box-shadow: 0px 6px 10px 0px rgba(13, 13, 28, 0.1);
+      top: -10px;
+      @include transition(all, 0.5s, ease, 0s);     
+    }
+    @media(max-width: 1087px) {
+      max-width: 100%;
+    }
+  }
+
+  // .cards-row__item
+
+  &__item {
+    @include flex-column;
+    padding: 30px 38px 30px 38px;
+    @media(max-width: 1087px) {
+      flex-direction: row;
+      align-items: center;
+    }
+    @media(max-width: 499px) {
+      flex-direction: column;
+    }
+  }
+
+  // .cards-row__image
+
+  &__image {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex: 0 0 240px;
+    margin: 0px 0px 24px 0px;
+    @media(max-width: 1087px) {
+      flex: 0 0 180px;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  // .cards-row__info
+
+  &__info {
+    @media(max-width: 1087px) {
+      padding: 0px 0px 0px 20px;
+    }
+  }
+
+  // .cards-row__title
+
+  &__title {
+    @extend .cards__title;
+    a {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include width-height(100%, 100%);
+      }
+    }
+  }
+
+  // .cards-row__text
+
+  &__text {
+    @extend .cards__text;
+  }
+}

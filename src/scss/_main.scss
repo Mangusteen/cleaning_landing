@@ -1,0 +1,39 @@
+.main {
+  flex: 1 1 auto;
+  // background: $color_typography_blue;
+
+  /* section 1 - quality-cleaning*/
+@import './quality_cleaning';
+
+  /* section 2 - how-works*/
+@import './how-works';
+
+
+/* section 3 - benefits*/
+@import './benefits';
+
+
+/* section 4 - services*/
+@import './services';
+
+
+/* section 5 - keep-safe*/
+@import './keep-safe';
+
+
+/* section 6 - areas */
+@import './areas';
+
+
+/* section 7 - makes-different */
+@import './makes-different';
+
+
+/* section 8 - articles-resources */
+@import './articles-resourses';
+
+
+/* section 9 - request */
+@import './request';
+
+}

@@ -1,0 +1,211 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: var(--white);
+  // background: $color_typography_blue;
+
+  &.lock {
+    overflow: hidden;
+  }
+  // .header__body
+
+  &__body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 32px 0px;
+    @include width-height(100%, 118px);
+    @media (max-width: 768px) {
+      height: 90px;
+    }
+  }
+
+  // .header__logo
+
+  &__logo {
+    margin: 0px 40px 0px 0px;
+    z-index: 2;
+    svg {
+      .logo{
+        fill: var(--dark-blue);
+      }
+    }
+    @media (max-width: 499px) {
+      margin: 0px 30px 0px 0px;
+      width: 50px;
+      overflow: hidden;
+    }
+  }
+
+  // .header__burger
+
+  &__burger {
+    display: none;
+    &.active {
+      &::before {
+        transform: rotate(45deg);
+        top: 9px;
+      }
+      &::after {
+        transform: rotate(-45deg);
+        top: 9px;
+      }
+      span {
+        transform: scale(0);
+      }
+    }
+    @media (max-width: 839px) {
+      position: relative;
+      display: block;
+      @include width-height(30px, 20px);
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        background-color: var(--dark-blue);
+        @include width-height(100%, 2px);
+        @include transition(all, 0.3s, ease, 0s);
+      }
+      &::before {
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+      }
+      & span {
+        position: absolute;
+        top: 9px;
+        left: 0;
+        background-color: var(--dark-blue);
+        @include width-height(100%, 2px);
+        @include transition(all, 0.3s, ease, 0s);
+      }
+    }
+  }
+
+  // .header__menu
+
+  &__menu {
+    flex: 1 1 auto;
+
+    @media (max-width: 839px) {
+      &.active {
+        top: 0;
+      }
+      flex: block;
+      position: fixed;
+      text-align: center;
+      padding: 120px 20px 10px 20px;
+      top: -100%;
+      left: 0;
+      background-color: #9bc4f3;
+      overflow: auto;
+      @include width-height(100%, 100%);
+      @include transition(all, 0.3s, ease, 0s);
+    }
+  }
+  // .header__list
+
+  &__list {
+    display: flex;
+    position: relative;
+    z-index: 4;
+    li {
+      &:not(:last-child) {
+        margin: 0px 22px 0px 0px;
+        @media (max-width: 768px) {
+          margin: 0px 0px 25px 0px;
+        }
+      }
+    }
+    @media (max-width: 839px) {
+      flex-direction: column;
+    }
+  }
+
+  // .header__link
+
+  &__link {
+    @include fz-lh(18px, 30px);
+    color: var(--dark-blue);
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      color: var(--gray);
+      @include transition(text-decoration, 0.3s, ease, 0s);
+    }
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  // .header__action
+
+  &__action {
+    display: flex;
+    align-items: center;
+    @media (max-width: 839px) {
+      flex: 1 1 auto;
+      justify-content: flex-end;
+    }
+  }
+
+  // .header__button
+
+  &__button {
+    @include fz-lh(16px, 18px);
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-radius: 14px;
+    padding: 17px 24px 19px 24px;
+    text-align: center;
+    z-index: 3;
+    &:hover {
+      opacity: 0.7;
+      @include transition(opacity, 0.3s, ease, 0s);
+    }
+    &:active {
+      background-color: #004594;
+      @include transition(background-color, 0.3s, ease, 0s);
+    }
+    &:disabled {
+      background-color: #3f5165;
+      @include transition(background-color, 0.3s, ease, 0s);
+    }
+    &:focus {
+      background-color: #08284d;
+      @include transition(background-color, 0.3s, ease, 0s);
+    }
+    @media (max-width: 839px) {
+      margin: 0px 24px 0px 0px;
+    }
+    @media (max-width: 375px) {
+      display: none;
+    }
+  }
+}
+
+.dark-mode-toggle {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin: 0px 15px 0px 0px;
+}
+.dark-mode-sun,
+.dark-mode-moon {
+  @include width-height(45px, 45px);
+  path {
+    fill: var(--dark-blue);
+  }
+}
+.dark-mode-sun {
+  display: flex;
+}
+.dark-mode-moon {
+  display: none;
+}

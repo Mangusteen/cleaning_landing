@@ -1,0 +1,130 @@
+.makes-different {
+  margin: 0px 0px 120px 0px;
+  @media(max-width: 768px) {
+    margin: 0px 0px 80px 0px;
+  }
+  @media(max-width: 499px) {
+    margin: 0px 0px 60px 0px;
+  }
+  // .makes-different__content
+
+  &__content {
+    display: flex;
+    align-items: center;
+    @media(max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  // .makes-different__body
+
+  &__body {
+    @include flex-column;
+    flex: 0 1 60%;
+    margin: 0px 38px 0px 0px;
+    @media(max-width: 992px)  {
+      margin: 0px 20px 0px 0px;
+    }
+    // @media(max-width: 768px) {
+    //   align-items: center;
+    // }
+  }
+
+  // .makes-different__text
+
+  &__text {
+    margin: 0px 0px 16px 0px;
+    @media(max-width: 768px)  {
+      margin: 0px 0px 8px 0px;
+    }
+  }
+
+  // .makes-different__subtitle
+
+  &__subtitle {
+    @include fz-lh(15px, 30px);
+    color: var(--gray);
+    margin: 0px 0px 25px 0px;
+    @media(max-width: 992px)  {
+      margin: 0px 0px 15px 0px;
+    }
+    @media(max-width: 768px)  {
+      margin: 0px 0px 8px 0px;
+      line-height: 20.006px; /* 250.05% */
+    }
+  }
+
+  // .makes-different__statistics
+
+  &__statistics {
+    display: flex;
+    margin: 0px 0px 48px 0px;
+    @media(max-width: 992px)  {
+      margin: 0px 0px 24px 0px;
+    }
+  }
+
+  // .makes-different__item
+
+  &__item {
+    @include flex-column;
+    &:not(:last-child) {
+      margin: 0px 58px 0px 0px;
+      @media(max-width: 992px)  {
+        margin: 0px 35px 0px 0px;
+      }
+      @media(max-width: 768px)  {
+        margin: 0px 80px 0px 0px;
+      }
+      @media(max-width: 499px)  {
+        margin: 0px 40px 0px 0px;
+      }
+    }
+  }
+
+  // .makes-different__value
+
+  &__value {
+    @include fz-lh(54px, 65px);
+    display: flex;
+    color: var(--dark-blue);
+    font-weight: 700;
+    span {
+      color: var(--accent-color);
+      font-weight: 400;
+      line-height: 65.988px; /* 122.2% */
+      width: 27px;
+    }
+    @media(max-width: 992px)  {
+      font-size: 42px;
+    }
+  }
+
+  // .makes-different__title
+
+  &__title {
+    @include fz-lh(18px, 23px);
+    color: var(--gray);
+    font-weight: 700;
+  }
+
+  // .makes-different__button
+
+  &__button {
+    display: flex;
+    @media(max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  // .makes-different__image
+
+  &__image {
+    img {
+      max-width: 100%;
+    }
+    @media(max-width: 768px) {
+      max-width: 450px;
+    }
+  }
+}

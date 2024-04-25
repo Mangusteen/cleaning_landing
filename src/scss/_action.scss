@@ -1,0 +1,44 @@
+.action {
+   // .action__title
+
+   &__title {
+      @include fz-lh(20px, 22px);
+      color: var(--dark-blue);
+      font-weight: 700;
+      margin: 0px 0px 30px 0px;
+      @media(max-width: 768px) {
+         @include fz-lh(18px, 20px);
+         margin: 0px 0px 15px 0px;
+      }
+   }
+
+   // .action__phone
+
+   &__phone {
+      @include fz-lh(28px, 36px);
+      color: var(--accent-color);
+      font-weight: 700;
+      margin: 0px 0px 6px 0px;
+      cursor: pointer;
+      @media(max-width: 768px) {
+         @include fz-lh(24px, 30px);
+      }
+      }
+
+   // .action__text
+
+   &__text {
+      color: var(--gray);
+      @include fz-lh(18px, 30px);
+      margin: 0px 0px 18px 0px;
+      @media(max-width: 768px) {
+         @include fz-lh(16px, 24px);
+      }
+      }
+
+   // .action__button
+
+   &__button {
+      width: 256px;
+   }
+}

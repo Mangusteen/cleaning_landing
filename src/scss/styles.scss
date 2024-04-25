@@ -1,0 +1,69 @@
+@import './nullstyle.scss';
+@import './mixins';
+@import './text_block';
+@import './call_us';
+@import './cards_cards-row';
+@import './btns';
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular,700);
+$ff_Roboto: Roboto;
+
+:root {
+  --white: #FFF;
+  --dark-blue: #211F54;
+  --accent-color: #0075FF;
+  --gray: #6E7191;
+
+  --foreground:var(--dark-blue);
+  --background: var(--white);
+}
+.darkmode {
+  --white: #211F54;
+  --dark-blue: #FFF;
+  --accent-color: #0075FF;
+  --gray: #6E7191;
+
+  --foreground:var(--white);
+  --background: var(--dark-blue);
+}
+
+
+body {
+  font-family: $ff_Roboto;
+  height: auto; 
+  background: var(--white);
+}
+
+
+/*оболочка*/
+.wrapper {
+  overflow: hidden;
+  max-width: 100%;
+  @include flex-column;
+  justify-content: center;
+  height: 100%;
+}
+
+/*контейнер*/
+.container {
+  max-width: 1260px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0px 20px;
+  @media (max-width: 1440px) {
+    max-width: 1220px;
+  }
+  @media (max-width: 1087px) {
+    max-width:970px;
+  }
+  @media (max-width: 768px) {
+    max-width: none;
+  }
+} 
+
+@import './header';
+
+@import './main';
+
+@import './footer';
